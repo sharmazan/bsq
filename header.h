@@ -1,16 +1,21 @@
-struct			square
-{
-	int			row;
-	int			col;
-	int			size;
-};
+#ifndef HEADER_H
+# define HEADER_H
 
-struct			map
+typedef struct square
 {
-	char		**val;
-	int			width;
-	int			hight;
-	char		c_empty;
-	char		c_obstacle;
-	char		c_full;
-};
+	int		row;
+	int		col;
+	int		size;
+}			t_square;
+
+typedef struct map
+{
+	char	**val;
+	int		width;
+	int		height;
+	char	c_empty;
+	char	c_obstacle;
+	char	c_full;
+}			t_map;
+
+#endif

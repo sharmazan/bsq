@@ -38,6 +38,10 @@ int	main(int ac, char **av)
 		ft_putstr("Error: Wrong map file\n");
 		cleanup_resources(fd, map, 1);
 	}
+	else
+	{
+		ft_putstr("Good map file\n");
+	}
 	// if (read_line(fd, config, sizeof(config)) != NULL)
 	// {
 	// 	if (parse_config(config, map))

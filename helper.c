@@ -12,24 +12,20 @@ int	validate_map_file(int fd, t_map *m)
 	int		width;
 	char	c;
 	char	config[100];
-	ssize_t	bytes_read;
 
 	if (read_line(fd, config, sizeof(config)) == NULL)
 		return (0);
-	printf("read_line works\n");
 	if (!(height = parse_config_line(config, m)))
 		return (0);
-	printf("parse_config_line works\n");
 	i = 0;
 	while (i < height)
 	{
 		line_len = 0;
-		bytes_read = read(fd, &c, 1);
-		while (bytes_read == 1)
+		while (read(fd, &c, 1))
 		{
 			if (c == '\n')
 				break ;
-			bytes_read = read(fd, &c, 1);
+			line_len++;
 		}
 		if (i == 0)
 			width = line_len;

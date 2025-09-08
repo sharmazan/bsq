@@ -42,26 +42,5 @@ int	main(int ac, char **av)
 	{
 		ft_putstr("Good map file\n");
 	}
-	// if (read_line(fd, config, sizeof(config)) != NULL)
-	// {
-	// 	if (parse_config(config, map))
-	// 	{
-	// 		// Successfully parsed config
-	// 	}
-	// 	else
-	// 	{
-	// 		ft_putstr("Error: Invalid config line in file ");
-	// 		ft_putstr(av[1]);
-	// 	}
-	// }
-	// else
-	// {
-	// 	ft_putstr("Error: Cannot read config line from file ");
-	// 	ft_putstr(av[1]);
-	// 	ft_putstr("\n");
-	// 	close(fd);
-	// 	return (1);
-	// }
-	close(fd);
-	return (0);
+	cleanup_resources(fd, map, 0);
 }

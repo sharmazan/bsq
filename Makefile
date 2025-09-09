@@ -1,5 +1,18 @@
-bsq:
-	cc -g -Wall -Wextra -Werror -o bsq *.c
+NAME = bsq
+CFLAGS += -g -Wall -Wextra -Werror
 
-fclean:
-	rm -f *.o* bsq
+SOURCES = 	main.c \
+			helper.c \
+			parser.c \
+			utils.c
+
+OBJECTS = $(SOURCES:.c=.o)
+
+$(NAME): $(OBJECTS)
+	cc -o $(NAME) $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+clean:
+	rm -f $(OBJECTS)

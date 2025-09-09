@@ -33,6 +33,7 @@ int	validate_map_file(int fd, t_map *m)
 			return (0);
 		i++;
 	}
+	m->width = width;
 	return (width);
 }
 

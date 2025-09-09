@@ -16,6 +16,10 @@ OBJECTS = $(SOURCES:.c=.o)
 $(NAME): $(OBJECTS)
 	$(CC) -o $(NAME) $(OBJECTS)
 
+# all: default
+
+# re: fclean all
+
 fclean: clean
 	rm -f $(NAME)
 
@@ -25,4 +29,4 @@ clean:
 tests:
 	$(CC) -o test $(TESTS) $(UTILS)
 	./test
-	rm -f ./test
+	# rm -f ./test

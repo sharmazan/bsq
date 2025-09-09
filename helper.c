@@ -37,25 +37,25 @@ int	validate_map_file(int fd, t_map *m)
 	return (width);
 }
 
-// int	read_map_from_file(int fd, t_map *m)
-// {
-// 	char	*line;
+int	read_map_from_file(int fd, t_map *m)
+{
+	char	*line;
 
-// 	line = malloc(100);
-// 	if (read_line(fd, config, sizeof(config)) != NULL)
-// 	{
-// 		if (parse_config(config, m))
-// 		{
-// 			// Successfully parsed config
-// 		}
-// 		else
-// 		{
-// 			ft_putstr("Error: Invalid config line in file ");
-// 			ft_putstr(av[1]);
-// 		}
-// 	}
-// 	return (1);
-// }
+	line = malloc(100);
+	if (read_line(fd, config, sizeof(config)) != NULL)
+	{
+		if (parse_config(config, m))
+		{
+			// Successfully parsed config
+		}
+		else
+		{
+			ft_putstr("Error: Invalid config line in file ");
+			ft_putstr(av[1]);
+		}
+	}
+	return (1);
+}
 
 void	cleanup_resources(int fd, t_map *m, int exit_code)
 {

@@ -1,5 +1,6 @@
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -47,6 +48,35 @@ int	ft_atoi(char *str)
 		str++;
 	}
 	return (result * sign);
+}
+
+void	copy_nbytes(char *dst, const char *src, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+}
+
+char	*increase_buf(char *buf, unsigned int increase)
+{
+	int		i;
+	int		len;
+	char	*new_buf;
+
+	len = ft_strlen(buf);
+	new_buf = malloc(sizeof(char) * len + increase + 1);
+	if (new_buf != NULL)
+	{
+		copy_nbytes(new_buf, buf, len);
+		free(buf);
+		buf = new_buf;
+	}
+	return (new_buf);
 }
 
 char	*read_line(int fd, char *buffer, int buffer_size)

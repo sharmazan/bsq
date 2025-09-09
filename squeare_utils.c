@@ -18,3 +18,9 @@ void	update_biggest(t_square *biggest, t_square *current)
 		biggest->size = current->size;
 	}
 }
+
+int	is_square_area(t_square *s, int row, int col)
+{
+	return ((row >= s->row && row <= s->row + s->size) &&
+		(col >= s->col && col <= s->col + s->size));
+}
